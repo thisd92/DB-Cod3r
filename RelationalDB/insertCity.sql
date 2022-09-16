@@ -1,11 +1,17 @@
 SELECT * FROM `estados`
 SELECT * FROM `cidades`
 
-INSERT INTO cidades (nome, area, estado_id)
-VALUES ('Campinas', 795, 29)
+--INSERT INTO cidades (nome, area, estado_id)
+--VALUES ('Campinas', 795, 29)
+
+--INSERT INTO cidades (nome, area, estado_id)
+--VALUES ('Niterói', 133.9, 23)
 
 INSERT INTO cidades (nome, area, estado_id)
-VALUES ('Niterói', 133.9, 23)
+VALUES ('Campinas', 795, (SELECT id FROM `estados` WHERE sigla = 'SP'))
+
+INSERT INTO cidades (nome, area, estado_id)
+VALUES ('Niterói', 133.9, (SELECT id FROM `estados` WHERE sigla = 'RJ'))
 
 INSERT INTO cidades (nome, area, estado_id)
 VALUES ('Caruaru', 920.6, (SELECT id FROM `estados` WHERE sigla = 'PE'))
