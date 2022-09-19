@@ -1,7 +1,7 @@
 ALTER TABLE
     empresas
 MODIFY
-    cnpj VARCHAR(14);
+    cnpj VARCHAR(14) NOT NULL;
 
 INSERT INTO
     empresas (nome, cnpj)
