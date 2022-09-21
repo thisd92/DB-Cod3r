@@ -1,0 +1,46 @@
+use wm;
+
+show collections;
+
+db.estados.drop();
+
+db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"});
+
+db.estados.insert({nome: "Alagoas", sigla: "AL", regiao: "Nordeste"});
+
+db.estados.insertOne({nome: "Rio de Janeiro", sigla: "RJ", regiao: "Sudeste", cidades: [{nome: "Niterói", area: 133.9, populacao: 487562}]});
+
+db.estados.find();
+
+db.estados.insertOne({nome: "São Paulo", sigla: "SP", regiao: "Sudeste", cidades: [
+    {
+        _id: ObjectId(),
+        nome: "Campinas",
+        area: 795.7,
+        prefeito: "Jonas Donizette",
+        populacao: 1081000
+    },
+    {
+        _id: ObjectId(),
+        nome: "Guarulhos",
+        populacao: 1325000
+    },
+    {
+        _id: ObjectId(),
+        nome: "Sorocaba",
+        distanciaCapital: 87,
+        populacao: 644919
+    }]
+});
+
+db.estados.findOne();
+db.estados.findOne({sigla: "RJ"});
+db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}) ;
+db.estados.find({populacao: {$exists: true}}) ;
+db.estados.find().skip(1).limit(2);
+
+db.estados.count();
+
+db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1});
+db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1, _id: 0});
+db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0});
