@@ -13,9 +13,6 @@ const FormPrefeito = () => {
     }
     const [prefeito, setPrefeito] = useState<Prefeito>(prevPrefeito)
 
-    const [nomePrefeito, setNomePrefeito] = useState('')
-    const [cidadeID, setCidadeId] = useState(0)
-
     const handleNameChange = (e: any) => {
         const {name} = e.target
         setPrefeito({ ...prefeito, [name]: e.target.value})
@@ -37,6 +34,10 @@ const FormPrefeito = () => {
         <div className="form-wrapper">
             <h4>Cadastro de Prefeito</h4>
             <form onSubmit={handleSubmit}>
+                <div className="form-control">
+                    <label htmlFor="Id">ID</label>
+                    <input type="text" readOnly />
+                </div>
                 <div className="form-control">
                     <label htmlFor="Nome">Nome</label>
                     <input type="text" name="nome" value={prefeito.nome} onChange={handleNameChange} />

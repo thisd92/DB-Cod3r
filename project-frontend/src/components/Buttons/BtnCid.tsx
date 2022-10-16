@@ -2,10 +2,10 @@ import { BASE_URL } from '../../utils/request';
 import { del } from '../../services/service';
 
 type Props = {
-    cidId: number;
+    cidId?: number;
 }
 
-function handleClick(id: number){
+function handleClick(id: number | undefined){
     del(`/cidades/${id}`)
     .then(resp => {
         alert('Cidade excluída com sucesso');

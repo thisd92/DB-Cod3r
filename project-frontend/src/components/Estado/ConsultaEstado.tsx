@@ -21,12 +21,13 @@ const ConsultaEstado = () => {
 
     return (
         <div>
-            <button onClick={getEstados}>Consultar</button>
+            <button onClick={getEstados}>Buscar</button>
             <button onClick={() => setEstados([])}>Limpar</button>
             <div className="table-wrapper">
                 <table className="fl-table">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Estado</th>
                             <th>Região</th>
                             <th>População</th>
@@ -36,6 +37,7 @@ const ConsultaEstado = () => {
                     <tbody>
                         {estados.map((estado, index) => (
                             <tr key={index}>
+                                <td>{estado?.id}</td>
                                 <td>{estado?.nome}</td>
                                 <td>{estado?.regiao}</td>
                                 <td>{estado?.populacao}</td>

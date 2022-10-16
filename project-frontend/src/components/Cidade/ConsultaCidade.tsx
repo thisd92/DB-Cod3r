@@ -28,6 +28,7 @@ const ConsultaCidade = () => {
                 <table className="fl-table">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Cidade</th>
                             <th>Área (km²)</th>
                             <th>Estado ID</th>
@@ -37,6 +38,7 @@ const ConsultaCidade = () => {
                     <tbody>
                         {cidades.map((cidade, index) => (
                             <tr key={index}>
+                                <td>{cidade?.id}</td>
                                 <td>{cidade?.nome}</td>
                                 <td>{cidade?.area}</td>
                                 <td>{cidade?.estado_id}</td>

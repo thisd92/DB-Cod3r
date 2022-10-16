@@ -21,12 +21,13 @@ const ConsultaPrefeito = () => {
 
     return (
         <div>
-            <button onClick={getPrefeitos}>Consultar</button>
+            <button onClick={getPrefeitos}>Buscar</button>
             <button onClick={() => setPrefeitos([])}>Limpar</button>
             <div className="table-wrapper">
                 <table className="fl-table">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Prefeito</th>
                             <th>Cidade ID</th>
                             <th>Ação</th>

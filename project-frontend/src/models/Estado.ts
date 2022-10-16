@@ -1,5 +1,5 @@
 export type Estado = {
-    id: number,
+    id?: number,
     nome: string,
     regiao: string,
     populacao: number

@@ -9,11 +9,11 @@ function App() {
 
   return (
     <div className="App">
-      <button className={topic == 1 ? 'active' : ''} onClick={() => setTopic(1)}>Cidades</button>
       <button className={topic == 2 ? 'active' : ''} onClick={() => setTopic(2)}>Estados</button>
+      <button className={topic == 1 ? 'active' : ''} onClick={() => setTopic(1)}>Cidades</button>
       <button className={topic == 3 ? 'active' : ''} onClick={() => setTopic(3)}>Prefeitos</button>
-      {topic === 1 && <Cidades />}
       {topic === 2 && <Estados />}
+      {topic === 1 && <Cidades />}
       {topic === 3 && <Prefeitos />}
     </div>
   )
