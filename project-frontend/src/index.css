@@ -48,12 +48,19 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+button:active{
+  background-color: rgba(102, 110, 255, 0.5);
+}
 button:hover {
-  border-color: #646cff;
+  border-color: rgb(102, 110, 255);
+  background-color: rgba(102, 110, 255, 0.30);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+.active{
+  background-color:rgba(102, 110, 255, 0.5);
 }
 
 @media (prefers-color-scheme: light) {

@@ -1,5 +1,5 @@
 export type Prefeito = {
-    id: number,
+    id?: number,
     nome: string,
     cidade_id: number
 }
