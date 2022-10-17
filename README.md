@@ -1,4 +1,9 @@
 # DB-Cod3r
-Curso Cod3r - Relational/Non-Relational DB
+Curso Cod3r - Relational DB
 
-Projeto utilizando React com Typescript e integração com banco de dados MySQL, utilizando SpringBoot
+A partir da Seção de Banco Relacional do Curso Web Moderno da Cod3r foi criado:
+- CRUD com Frontend em ReactJs, utilizando React Hooks, usando template TypeScript
+  - Create, Read e Delete prontos.
+  - Update em desenvolvimento.
+- Backend em Java, utilizando SpringBoot, Hibernate, JPA e MySQL
+  - Projeto finalizado.
