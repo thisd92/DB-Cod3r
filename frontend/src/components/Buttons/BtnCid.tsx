@@ -1,5 +1,5 @@
-import { BASE_URL } from '../../utils/request';
 import { del } from '../../services/service';
+import { AiFillDelete } from 'react-icons/ai'
 
 type Props = {
     cidId?: number;
@@ -14,7 +14,7 @@ function handleClick(id: number | undefined){
 
 function BtnCid( {cidId} : Props ){
     return(
-        <button onClick={() => handleClick(cidId)}>Excluir</button>
+        <button onClick={() => handleClick(cidId)}><AiFillDelete /></button>
     )
 }
 

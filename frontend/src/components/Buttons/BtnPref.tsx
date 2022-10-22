@@ -1,5 +1,5 @@
-import { BASE_URL } from '../../utils/request';
 import { del } from '../../services/service';
+import { AiFillDelete } from 'react-icons/ai'
 
 type Props = {
     prefId?: number;
@@ -14,7 +14,7 @@ function handleClick(id: number | undefined){
 
 function BtnPref( {prefId} : Props ){
     return(
-        <button onClick={() => handleClick(prefId)}>Excluir</button>
+        <button onClick={() => handleClick(prefId)}><AiFillDelete /></button>
     )
 }
 
