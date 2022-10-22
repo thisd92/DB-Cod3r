@@ -1,5 +1,7 @@
 # DB-Cod3r
 
+### PT-BR
+
 A partir da Seção de Banco Relacional do Curso Web Moderno da Cod3r foi criado:
 - [CRUD com Frontend em ReactJs](https://github.com/thisd92/DB-Cod3r/tree/master/frontend)
   - Utilizado Vite
@@ -11,8 +13,10 @@ A partir da Seção de Banco Relacional do Curso Web Moderno da Cod3r foi criado
 - [MySQL](https://github.com/thisd92/DB-Cod3r/tree/master/RelationalDB)
   - Utilizados scripts de SQL para criação das tabelas
   - Scripts para inserção de dados
-  
-  From the Relational DB Section of the Cod3r's Modern Web Course, it was created:
+
+### ENGLISH
+
+From the Relational DB Section of the Cod3r's Modern Web Course, it was created:
 - [CRUD using Frontend ReactJs](https://github.com/thisd92/DB-Cod3r/tree/master/frontend)
   - Used Vite
   - Template TypeScript
