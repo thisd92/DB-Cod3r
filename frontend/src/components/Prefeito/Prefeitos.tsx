@@ -9,7 +9,6 @@ const Prefeitos = () => {
         <div>
             <button className={topic == 1 ? 'active' : ''} onClick={() => setTopic(1)}>Consultar</button>
             <button className={topic == 2 ? 'active' : ''} onClick={() => setTopic(2)}>Cadastrar</button>
-            <button className={topic == 3 ? 'active' : ''} onClick={() => setTopic(3)}>Atualizar</button>
             {topic === 1 && <ConsultaPrefeito />}
             {topic === 2 && <FormPrefeito />}
         </div>
