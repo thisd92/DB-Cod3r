@@ -3,6 +3,7 @@ import { Cidade } from "../../models/Cidade";
 import { get, del } from "../../services/service";
 import { BtnCid } from "../Buttons";
 import "../../assets/css/table.css";
+import { ModalCidade } from "../Modals";
 
 const ConsultaCidade = () => {
 
@@ -18,6 +19,10 @@ const ConsultaCidade = () => {
             .then(resp => {
                 setCidades(resp.data)
             })
+    }
+
+    const styleTD = {
+        display: 'flex'
     }
 
     return (
@@ -42,7 +47,12 @@ const ConsultaCidade = () => {
                                 <td>{cidade?.nome}</td>
                                 <td>{cidade?.area}</td>
                                 <td>{cidade?.estado_id}</td>
-                                <td><BtnCid cidId={cidade.id}/></td>
+                                <td>
+                                    <div style={styleTD}>
+                                        <ModalCidade cidadeId={cidade.id} />
+                                        <BtnCid cidId={cidade.id} />
+                                    </div>
+                                </td>
                             </tr>
                         ))}
                     </tbody>

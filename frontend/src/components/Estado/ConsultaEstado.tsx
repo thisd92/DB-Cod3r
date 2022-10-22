@@ -3,6 +3,7 @@ import { get } from "../../services/service";
 import { Estado } from "../../models/Estado";
 import { BtnEst } from "../Buttons";
 import "../../assets/css/table.css";
+import { ModalEstado } from "../Modals";
 
 const ConsultaEstado = () => {
 
@@ -17,6 +18,10 @@ const ConsultaEstado = () => {
             .then(resp => {
                 setEstados(resp.data)
             })
+    }
+
+    const styleTD = {
+        display: 'flex'
     }
 
     return (
@@ -41,7 +46,13 @@ const ConsultaEstado = () => {
                                 <td>{estado?.nome}</td>
                                 <td>{estado?.regiao}</td>
                                 <td>{estado?.populacao}</td>
-                                <td><BtnEst estId={estado.id}/></td>
+
+                                <td>
+                                    <div style={styleTD}>
+                                        <ModalEstado estadoId={estado.id} />
+                                        <BtnEst estId={estado.id} />
+                                    </div>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
