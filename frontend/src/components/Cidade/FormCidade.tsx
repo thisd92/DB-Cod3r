@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../assets/css/form.css";
 import { Cidade } from "../../models/Cidade";
 import { BASE_URL } from "../../utils/request";
@@ -12,6 +12,10 @@ const FormCidade = () => {
         estado_id: 0
     }
     const [cidade, setCidade] = useState<Cidade>(prevCidade)
+
+    useEffect(() => {
+        setCidade(prevCidade)
+    }, [])
 
     const handleNameChange = (e: any) => {
         const { name } = e.target

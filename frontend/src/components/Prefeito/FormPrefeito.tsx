@@ -1,8 +1,7 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../assets/css/form.css";
 import { Prefeito } from "../../models/Prefeito";
-import { save } from "../../services/service";
 import { BASE_URL } from "../../utils/request";
 
 const FormPrefeito = () => {
@@ -11,8 +10,13 @@ const FormPrefeito = () => {
         nome: '',
         cidade_id: 0
     }
-    const [prefeito, setPrefeito] = useState<Prefeito>(prevPrefeito)
 
+    const [prefeito, setPrefeito] = useState<Prefeito>(prevPrefeito)
+    
+    useEffect(() => {
+        setPrefeito(prevPrefeito)
+    }, [])
+    
     const handleNameChange = (e: any) => {
         const {name} = e.target
         setPrefeito({ ...prefeito, [name]: e.target.value})

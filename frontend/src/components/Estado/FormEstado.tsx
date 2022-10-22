@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../assets/css/form.css";
 import { Estado } from "../../models/Estado";
 import { BASE_URL } from "../../utils/request";
@@ -12,6 +12,10 @@ const FormEstado = () => {
         populacao: 0
     }
     const [estado, setEstado] = useState<Estado>(prevEstado)
+
+    useEffect(() => {
+        setEstado(prevEstado)
+    }, [])
 
     const handleNameChange = (e: any) => {
         const { name } = e.target
