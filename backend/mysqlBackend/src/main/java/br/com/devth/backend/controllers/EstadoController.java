@@ -2,6 +2,7 @@ package br.com.devth.backend.controllers;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,12 @@ public class EstadoController {
 	public ResponseEntity<List<Estado>> findAll(){
 		List<Estado> list = service.findAll();
 		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping(value="/{id}")
+	public ResponseEntity<Optional<Estado>> findById(@PathVariable Integer id, @RequestBody Optional<Estado> estado){
+		estado = service.findById(id);
+		return ResponseEntity.ok().body(estado);
 	}
 	
 	@PostMapping

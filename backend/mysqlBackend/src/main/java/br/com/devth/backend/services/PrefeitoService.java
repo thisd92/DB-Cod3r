@@ -1,6 +1,7 @@
 package br.com.devth.backend.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,10 @@ public class PrefeitoService {
 	
 	public List<Prefeito> findAll(){
 		return repository.findAll();
+	}
+	
+	public Optional<Prefeito> findById(Integer id){
+		return repository.findById(id);
 	}
 	
 	public Prefeito savePrefeito(Prefeito prefeito) {

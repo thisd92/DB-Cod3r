@@ -2,6 +2,7 @@ package br.com.devth.backend.controllers;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,12 @@ public class PrefeitoController {
 	public ResponseEntity<List<Prefeito>> findAll(){
 		List<Prefeito> list = service.findAll();
 		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping(value="/{id}")
+	public ResponseEntity<Optional<Prefeito>> findById(@PathVariable Integer id, @RequestBody Optional<Prefeito> prefeito){
+		prefeito = service.findById(id);
+		return ResponseEntity.ok().body(prefeito);
 	}
 	
 	@PostMapping
